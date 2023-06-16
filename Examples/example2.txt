@@ -1,0 +1,34 @@
+$$ u ovom primjeru je cilj izracunati prosjek i varijancu nekih rezultata
+
+$$ prvo definiramo sportasa i rezultate
+sportas Mike{185:91}
+rezultati Mike{245;211;190;213;200;205;204}
+
+brojRezultata = ~Mike.count;
+suma = 0;
+i = 0;
+loop(brojRezultata)
+    rezultat = ~Mike[i];
+    suma = suma + rezultat;
+    i = i + 1;
+endloop;
+
+prosjek = suma / brojRezultata;
+print "Prosjek Mikeovih rezultata iznosi:";
+print prosjek;
+
+$$ sada računamo varijancu
+suma = 0;
+i = 0;
+loop(brojRezultata)
+    rezultat = ~Mike[i];
+    razlika = rezultat - prosjek;
+    razlikaNaKvadrat = razlika * razlika;
+    suma = suma + razlikaNaKvadrat;
+    i = i + 1;
+endloop;
+
+varijanca = suma / brojRezultata;
+
+print "Varijanca Mikeovih rezultata iznosi:";
+print varijanca;

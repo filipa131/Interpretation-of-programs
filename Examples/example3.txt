@@ -1,0 +1,39 @@
+$$ ovaj primjer sluzi u istrazivanju utjecaja boravka na Mjesecu na rezultate skoka u vis
+$$ Rezultati se mjere prije eksperimenta i nakon
+$$ John tijekom eksperimenta radi određene treninge na Mjesecu, dok Mary identične na Zemlji
+
+function obradi(~athlete)
+    print ~athlete;
+    brojRezultata = ~athlete.count;
+    suma = 0;
+    i = 0;
+    loop(brojRezultata)
+        rezultat = ~athlete[i];
+        suma = suma + rezultat;
+        i = i + 1;
+    endloop;
+
+    prosjek = suma / brojRezultata;
+    print "Prosjek:";
+    print prosjek;
+endfunction;
+
+sportas JohnPrijeEksperimenta{185:91}
+rezultati JohnPrijeEksperimenta{245;211;190;213;200;205;204}
+
+sportas JohnNakonEksperimenta{185:88}
+rezultati JohnNakonEksperimenta{232;255;195;212;201;209;213}
+
+sportas MaryPrijeEksperimenta{168:63}
+rezultati MaryPrijeEksperimenta{197;166;193;188;177;192;168}
+
+sportas MaryNakonEksperimenta{168:63}
+rezultati MaryNakonEksperimenta{196;167;189;195;194;174;171}
+
+print "Rezultati prije eksperimenta:";
+function obradi(~JohnPrijeEksperimenta);
+function obradi(~MaryPrijeEksperimenta);
+
+print "Rezultati nakon eksperimenta:";
+function obradi(~JohnNakonEksperimenta);
+function obradi(~MaryNakonEksperimenta);

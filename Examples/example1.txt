@@ -1,0 +1,33 @@
+$$ upis i ispis broja
+scan broj;
+print broj;
+
+$$ definiranje sportasa
+sportas John{185:91}
+sportas Mary{168:63}
+sportas Luke{173:72}
+
+$$ definiranje rezultata skoka u vis (u cm)
+rezultati John{245;211;190;213;200;205;204}
+rezultati Mary{197;166;193;188;177;192;168}
+rezultati Luke{195;201;174;169;200;193}
+
+$$ dohvaćanje visina, računanje i ispis prosjeka visina
+visinaJohn = @John.height;
+visinaMary = @Mary.height;
+visinaLuke = @Luke.height;
+prosjek = (visinaJohn + visinaMary + visinaLuke) / 3;
+print "Prosjek visina sportasa je:";
+print prosjek;
+
+$$ ispostavilo se da je posljednji rezultat sportaša Luke pogrešno upisan Johnu, popravimo to
+-~~John 204;
++~~Luke 204;
+print "Ispis nakon popravljanja rezultata:";
+print ~John;
+print ~Luke;
+
+$$ ispis prvog rezultata sportašice Mary
+prviRezultat = ~Mary[0];
+print "Prvi rezultat sportasice Mary je:";
+print prviRezultat;
